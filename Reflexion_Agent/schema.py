@@ -13,3 +13,10 @@ class AnswerQn(BaseModel):
     "address the critique of current answer")
     
     reflection: Reflection = Field(description="Your reflection on current answer")
+
+class ReviseAnswer(AnswerQn):
+    """Revise your original answer to your question."""
+
+    references: List[str] = Field(
+        description="Citations motivating your updated answer."
+    )
